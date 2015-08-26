@@ -1,0 +1,33 @@
+<acceptance-test-run title="CRUD sportsmen" name="CRUD sportsmen" steps="4" successful="3" failures="1" skipped="0" ignored="0" pending="0" result="FAILURE" duration="30984" timestamp="2015-08-26T10:15:47.355+03:00">
+  <user-story id="Sportmens" name="Sportmens" path="stories/test1/Sportmens.story"/>
+  <tags>
+    <tag name="Sportmens" type="story"/>
+    <tag name="Test1" type="capability"/>
+  </tags>
+  <test-group name="Given User opens Login Page and login to the base page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="16302">
+      <description>Login to site</description>
+    </test-step>
+  </test-group>
+  <test-group name="When add new sportsmen with data:［&#xd;
+| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |&#xd;
+| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |］" result="SUCCESS">
+    <test-step result="SUCCESS" duration="13564">
+      <description>Create new spertsmen: {ExamplesTable[tableAsString=&#xd;
+| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |&#xd;
+| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |,headerSeparator=|,valueSeparator=|,ignorableSeparator=|--,parameterConverters=org.jbehave.core.steps.ParameterConverters@13d15679,tableTransformers=org.jbehave.core.model.TableTransformers@5fa7e763,headers=[lastName, firstName, middleName, birthDate, Region1, FST1, trainer1, style, age, year, cardAvailability],data=[{lastName=Automation01, firstName=Auto01, middleName=Automiddle, birthDate=07-07-1987, Region1=Kyrovogradska, FST1=Dinamo, trainer1=TheBestTrainer, style=FS, age=Junior, year=2015, cardAvailability=Produced}],properties={headerSeparator=|, valueSeparator=|, ignorableSeparator=|--},propertiesAsString=,namedParameters={},trim=true,defaults=org.jbehave.core.steps.ConvertedParameters@38f3419d]}</description>
+    </test-step>
+  </test-group>
+  <test-group name="Then user finds added sportsmen and checks saved data" result="FAILURE">
+    <screenshots>
+      <screenshot image="screenshot-cd90d6f5efd0e050f783596c5d3a79f92463d06d43c880f309d2bfa2ab9aafc61.png" source="screenshot-cd90d6f5efd0e050f783596c5d3a79f92463d06d43c880f309d2bfa2ab9aafc61.html"/>
+    </screenshots>
+    <test-step result="SUCCESS" duration="364">
+      <description>Find sportsman</description>
+    </test-step>
+    <test-step result="FAILURE" duration="181">
+      <description>Get text from cells</description>
+      <error>Unspecified failure</error>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

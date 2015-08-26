@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>stories.test1.Sportmens</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+<story path="stories/test1/Sportmens.story" title="ChangeLog:
+Added test">
+<scenario keyword="Scenario:" title="CRUD sportsmen">
+<step outcome="successful">Given User opens Login Page and login to the base page</step>
+<step outcome="successful">When add new sportsmen with data:<parameter><parameters>
+<names><name>lastName</name><name>firstName</name><name>middleName</name><name>birthDate</name><name>Region1</name><name>FST1</name><name>trainer1</name><name>style</name><name>age</name><name>year</name><name>cardAvailability</name></names>
+<values><value>Automation01</value><value>Auto01</value><value>Automiddle</value><value>07-07-1987</value><value>Kyrovogradska</value><value>Dinamo</value><value>TheBestTrainer</value><value>FS</value><value>Junior</value><value>2015</value><value>Produced</value></values>
+</parameters>
+</parameter></step>
+<step outcome="failed" keyword="FAILED">Then user finds added sportsmen and checks saved data<failure>java.lang.AssertionError: Data in the first record is not as expected
+Expected: &lt;[Automation01 Auto01 Automiddle, Kyrovogradska, Dinamo, 2015, FS]&gt;
+     but: was &lt;[Automation01 Auto01 Automiddle, Kirovogradska, Dinamo, 2015, FS]&gt;</failure></step>
+<failure>java.lang.AssertionError: Data in the first record is not as expected
+Expected: &lt;[Automation01 Auto01 Automiddle, Kyrovogradska, Dinamo, 2015, FS]&gt;
+     but: was &lt;[Automation01 Auto01 Automiddle, Kirovogradska, Dinamo, 2015, FS]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at streamTvProject.test.SportsmenTest.findSportsmanAndVerifyData(SportsmenTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jbehave.core.steps.StepCreator$ParameterisedStep.perform(StepCreator.java:550)
+	at org.jbehave.core.embedder.StoryRunner$FineSoFar.run(StoryRunner.java:499)
+...</failure>
+</scenario>
+</story>
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>

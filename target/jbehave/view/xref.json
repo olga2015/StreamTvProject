@@ -1,0 +1,21 @@
+{"xref": {
+  "whenMade": 1440573380817,
+  "createdBy": "JBehave",
+  "metaFilter": "-skip -ignore",
+  "meta": [],
+  "stories": [
+    {
+      "description": "ChangeLog:\u000d\u000aAdded test",
+      "narrative": "",
+      "name": "Sportmens.story",
+      "path": "stories/test1/Sportmens.story",
+      "html": "stories.test1.Sportmens.html",
+      "meta": "",
+      "scenarios": "Scenario:CRUD sportsmen\u000aGiven User opens Login Page and login to the base page\u000aWhen add new sportsmen with data:\u000d\u000a| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |\u000d\u000a| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |\u000aThen user finds added sportsmen and checks saved data\u000a\u000a\u000a",
+      "passed": false,
+      "started": 1440573347248,
+      "duration": 31233
+    }
+  ],
+  "stepMatches": []
+}}

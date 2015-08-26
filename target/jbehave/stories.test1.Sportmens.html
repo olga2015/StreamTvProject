@@ -1,0 +1,35 @@
+<div class="story">
+<h1>ChangeLog:
+Added test</h1>
+<div class="path">stories/test1/Sportmens.story</div>
+<div class="scenario">
+<h2>Scenario: CRUD sportsmen</h2>
+<div class="step successful">Given User opens Login Page and login to the base page</div>
+<div class="step successful">When add new sportsmen with data:<span class="step parameter"><table>
+<thead>
+<tr>
+<th>lastName</th><th>firstName</th><th>middleName</th><th>birthDate</th><th>Region1</th><th>FST1</th><th>trainer1</th><th>style</th><th>age</th><th>year</th><th>cardAvailability</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Automation01</td><td>Auto01</td><td>Automiddle</td><td>07-07-1987</td><td>Kyrovogradska</td><td>Dinamo</td><td>TheBestTrainer</td><td>FS</td><td>Junior</td><td>2015</td><td>Produced</td></tr>
+</tbody>
+</table>
+</span></div>
+<div class="step failed">Then user finds added sportsmen and checks saved data <span class="keyword failed">(FAILED)</span><br/><span class="message failed">java.lang.AssertionError: Data in the first record is not as expected
+Expected: &lt;[Automation01 Auto01 Automiddle, Kyrovogradska, Dinamo, 2015, FS]&gt;
+     but: was &lt;[Automation01 Auto01 Automiddle, Kirovogradska, Dinamo, 2015, FS]&gt;</span></div>
+<pre class="failure">java.lang.AssertionError: Data in the first record is not as expected
+Expected: &lt;[Automation01 Auto01 Automiddle, Kyrovogradska, Dinamo, 2015, FS]&gt;
+     but: was &lt;[Automation01 Auto01 Automiddle, Kirovogradska, Dinamo, 2015, FS]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at streamTvProject.test.SportsmenTest.findSportsmanAndVerifyData(SportsmenTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jbehave.core.steps.StepCreator$ParameterisedStep.perform(StepCreator.java:550)
+	at org.jbehave.core.embedder.StoryRunner$FineSoFar.run(StoryRunner.java:499)
+...</pre>
+</div>
+</div>

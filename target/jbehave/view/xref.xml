@@ -1,0 +1,30 @@
+<xref>
+  <whenMade>1440573380817</whenMade>
+  <createdBy>JBehave</createdBy>
+  <metaFilter>-skip -ignore</metaFilter>
+  <meta/>
+  <stories>
+    <story>
+      <description>ChangeLog:&#xd;
+Added test</description>
+      <narrative></narrative>
+      <name>Sportmens.story</name>
+      <path>stories/test1/Sportmens.story</path>
+      <html>stories.test1.Sportmens.html</html>
+      <meta></meta>
+      <scenarios>Scenario:CRUD sportsmen
+Given User opens Login Page and login to the base page
+When add new sportsmen with data:&#xd;
+| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |&#xd;
+| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |
+Then user finds added sportsmen and checks saved data
+
+
+</scenarios>
+      <passed>false</passed>
+      <started>1440573347248</started>
+      <duration>31233</duration>
+    </story>
+  </stories>
+  <stepMatches/>
+</xref>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="uk" ng-app="baseApp" class="ng-scope"><head><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-animate-anchor{position:absolute;}</style>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<base href="/base/" />
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/angular-resource.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.13.0.min.js"></script>
+	<script src="js/angular-confirm.js"></script>
+	<script src="js/angular-file-upload.min.js"></script>
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- ngView:  --><div ng-view="" class="col-sm-12 ng-scope"><div ng-controller="MainCtrl" class="ng-scope">
+	<div class="ng-isolate-scope">
+  <ul ng-transclude="" ng-class="{'nav-stacked': vertical, 'nav-justified': justified}" class="nav nav-tabs">
+		<!-- ngRepeat: tab in tabs --><li ng-class="{active: active, disabled: disabled}" active="tab.active" ng-repeat="tab in tabs" class="ng-isolate-scope">
+  <a tab-heading-transclude="" ng-click="select()" href="" class="ng-binding"><tab-heading class="ng-scope">
+				<div class="tab-heading">Wrestlers
+					<div ng-show="tab.loading" class="spinner-loader ng-hide"></div>
+					<div class="close-it"><ico ng-show="tab.closable &amp;&amp; !tab.loading" ng-click="closeTab($index)" icon="glyphicon-remove" class="ng-hide"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></ico></div>
+				</div>
+			</tab-heading></a>
+</li><!-- end ngRepeat: tab in tabs --><li ng-class="{active: active, disabled: disabled}" active="tab.active" ng-repeat="tab in tabs" class="ng-isolate-scope active">
+  <a tab-heading-transclude="" ng-click="select()" href="" class="ng-binding"><tab-heading class="ng-scope">
+				<div class="">New Wrestler
+					<div ng-show="tab.loading" class="spinner-loader"></div>
+					<div class="close-it"><ico ng-show="tab.closable &amp;&amp; !tab.loading" ng-click="closeTab($index)" icon="glyphicon-remove" class="ng-hide"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></ico></div>
+				</div>
+			</tab-heading></a>
+</li><!-- end ngRepeat: tab in tabs -->
+	</ul>
+  <div class="tab-content">
+    <!-- ngRepeat: tab in tabs --><div tab-content-transclude="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" class="tab-pane ng-scope">
+    
+			
+			<!-- ngInclude: tab.src --><div ng-include="tab.src" class="ng-scope"><div ng-controller="WrestlerListCtrl" class="m20 ng-scope">
+    <div class="row">
+        <div class="col-lg-12">
+            <form class="form-inline top-form ng-pristine ng-valid" novalidate="">
+                <div class="form-group">
+                    <input type="text" autofocus="autofocus" ng-model="searchFor" class="form-control ng-pristine ng-untouched ng-valid" />
+                    <button ng-click="searchWrestler(searchFor)" class="btn btn-primary" type="submit"><ico icon="glyphicon-search"><span aria-hidden="true" class="glyphicon glyphicon-search"></span></ico> Search</button>
+                    <button ng-click="newWrestler()" class="btn btn-default" type="button"><ico icon="glyphicon-plus"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></ico> New</button>
+                    <div ng-show="loading" class="spinner-loader ng-hide"></div>
+                </div>
+                <div class="form-group pull-right">
+                    <button ng-click="resetFilters()" class="btn btn-default" type="button"><ico icon="glyphicon-remove"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></ico></button>
+                    <select ng-change="filterUpdated()" ng-options="o.id as o.name for o in getOptions('regions')" ng-model="filters.fregion" class="form-control ng-pristine ng-untouched ng-valid"><option value="" class="" selected="selected">All Regions</option><option value="string:2" label="AR Krym">AR Krym</option><option value="string:3" label="Vynnitska">Vynnitska</option><option value="string:4" label="Volynska">Volynska</option><option value="string:5" label="Dnipropetrovska">Dnipropetrovska</option><option value="string:6" label="Donetska">Donetska</option><option value="string:7" label="Ghitomerska">Ghitomerska</option><option value="string:8" label="Zakarpatska">Zakarpatska</option><option value="string:9" label="Zaporizka">Zaporizka</option><option value="string:10" label="Ivano-Frankivska">Ivano-Frankivska</option><option value="string:11" label="Kyivska">Kyivska</option><option value="string:12" label="Kyrovogradska">Kyrovogradska</option><option value="string:13" label="Luganska">Luganska</option><option value="string:14" label="Lvivska">Lvivska</option><option value="string:15" label="Mykolaivska">Mykolaivska</option><option value="string:16" label="Odeska">Odeska</option><option value="string:17" label="Poltavska">Poltavska</option><option value="string:18" label="Rivnenska">Rivnenska</option><option value="string:19" label="Sumska">Sumska</option><option value="string:20" label="Ternopilska">Ternopilska</option><option value="string:21" label="Kharkivska">Kharkivska</option><option value="string:22" label="Khersonska">Khersonska</option><option value="string:23" label="Khemlnicka">Khemlnicka</option><option value="string:24" label="Cherkaska">Cherkaska</option><option value="string:25" label="Chernivetska">Chernivetska</option><option value="string:26" label="Chernigivska">Chernigivska</option><option value="string:27" label="Kyiv">Kyiv</option><option value="string:28" label="Sevastopol">Sevastopol</option></select>
+                    <select ng-change="filterUpdated()" ng-options="o.id as o.name for o in getOptions('fsts')" ng-model="filters.ffst" class="form-control ng-pristine ng-untouched ng-valid"><option value="" class="" selected="selected">All FST</option><option value="string:2" label="Dinamo">Dinamo</option><option value="string:3" label="Kolos">Kolos</option><option value="string:4" label="Ukraina">Ukraina</option><option value="string:5" label="Spartak">Spartak</option><option value="string:6" label="MON">MON</option><option value="string:7" label="ZSU">ZSU</option><option value="string:8" label="SK">SK</option></select>
+                    <select ng-change="filterUpdated()" ng-options="o.id as o.name for o in getOptions('years')" ng-model="filters.fyear" class="form-control ng-pristine ng-untouched ng-valid"><option value="" class="" selected="selected">All Years</option><option value="string:2017" label="2017">2017</option><option value="string:2016" label="2016">2016</option><option value="string:2015" label="2015">2015</option><option value="string:2014" label="2014">2014</option><option value="string:2013" label="2013">2013</option></select>
+                    <select ng-change="filterUpdated()" ng-options="o.id as o.name for o in photoOptions" ng-model="filters.fphoto" class="form-control ng-pristine ng-untouched ng-valid"><option value="" class="" selected="selected">All Photo</option><option value="number:1" label="Yes">Yes</option><option value="number:2" label="No">No</option></select>
+                    <select ng-change="filterUpdated()" ng-options="o.id as o.name for o in getOptions('styles')" ng-model="filters.fstyle" class="form-control ng-pristine ng-untouched ng-valid"><option value="" class="" selected="selected">All Styles</option><option value="string:1" label="FS">FS</option><option value="string:2" label="FW">FW</option><option value="string:3" label="GR">GR</option></select>
+                </div>        
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 paging">
+            <div class="col-sm-1 pl-0">
+                <select ng-change="getPage()" ng-options="p for p in pager" ng-model="perPage" class="form-control p-2 ng-pristine ng-untouched ng-valid"><option value="number:25" label="25" selected="selected">25</option><option value="number:50" label="50">50</option><option value="number:100" label="100">100</option></select>
+            </div>
+            <div class="m-5 pull-right">
+                <ul class="pagination ng-isolate-scope ng-valid" max-size="maxSize" ng-change="getPage()" s="" last-text="&gt;&gt;" first-text="&lt;&lt;" boundary-links="true" next-text="&gt;" previous-text="&lt;" items-per-page="perPage" total-items="total" ng-model="curPage">
+  <!-- ngIf: boundaryLinks --><li ng-class="{disabled: noPrevious()}" ng-if="boundaryLinks" class="ng-scope disabled"><a ng-click="selectPage(1, $event)" href="" class="ng-binding">&lt;&lt;</a></li><!-- end ngIf: boundaryLinks -->
+  <!-- ngIf: directionLinks --><li ng-class="{disabled: noPrevious()}" ng-if="directionLinks" class="ng-scope disabled"><a ng-click="selectPage(page - 1, $event)" href="" class="ng-binding">&lt;</a></li><!-- end ngIf: directionLinks -->
+  <!-- ngRepeat: page in pages track by $index --><li ng-class="{active: page.active}" ng-repeat="page in pages track by $index" class="ng-scope active"><a ng-click="selectPage(page.number, $event)" href="" class="ng-binding">1</a></li><!-- end ngRepeat: page in pages track by $index -->
+  <!-- ngIf: directionLinks --><li ng-class="{disabled: noNext()}" ng-if="directionLinks" class="ng-scope disabled"><a ng-click="selectPage(page + 1, $event)" href="" class="ng-binding">&gt;</a></li><!-- end ngIf: directionLinks -->
+  <!-- ngIf: boundaryLinks --><li ng-class="{disabled: noNext()}" ng-if="boundaryLinks" class="ng-scope disabled"><a ng-click="selectPage(totalPages, $event)" href="" class="ng-binding">&gt;&gt;</a></li><!-- end ngIf: boundaryLinks -->
+</ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 top-headings">
+            <table class="table">
+                <colgroup>
+                    <col style="width:3%" />
+                    <col style="width:37%" />
+                    <col style="width:15%" />
+                    <col style="width:15%" />
+                    <col style="width:10%" />
+                    <col style="width:5%" />
+                    <col style="width:5%" />
+                    <col style="width:10%" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th class="sortable" ng-click="changeOrder('lname')">FIO
+                            <span ng-show="orderby=='lname DESC'" class="ng-hide">▼</span>
+                            <span ng-show="orderby=='lname ASC'">▲</span>
+                        </th>
+                        <th>Region</th>
+                        <th>FST</th>
+                        <th>License</th>
+                        <th>Photo</th>
+                        <th>Style</th>
+                        <th class="sortable" ng-click="changeOrder('w.changed')">Changed
+                            <span ng-show="orderby=='w.changed DESC'" class="ng-hide">▼</span>
+                            <span ng-show="orderby=='w.changed ASC'" class="ng-hide">▲</span>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="col-sm-12 mt80">
+            <table class="table table-striped table-hover">
+                <colgroup>
+                    <col style="width:3%" />
+                    <col style="width:37%" />
+                    <col style="width:15%" />
+                    <col style="width:15%" />
+                    <col style="width:10%" />
+                    <col style="width:5%" />
+                    <col style="width:5%" />
+                    <col style="width:10%" />
+                </colgroup>
+                <tbody>
+                    <!-- ngRepeat: wrestler in wrestlers.rows track by wrestler.id_wrestler -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div></div>
+		</div><!-- end ngRepeat: tab in tabs --><div tab-content-transclude="tab" ng-class="{active: tab.active}" ng-repeat="tab in tabs" class="tab-pane ng-scope active">
+    
+			
+			<!-- ngInclude: tab.src --><div ng-include="tab.src" class="ng-scope"><div ng-controller="WrestlerCtrl" class="ng-scope">
+	<div class="col-sm-12">
+		<form name="fWrestler" class="form-horizontal ng-valid-parse ng-valid-is-valid ng-valid ng-valid-required ng-pristine ng-submitted">
+			<div class="row">
+				<div class="wrestler col-sm-12">
+					<div class="buttons">
+						<div class="button">
+							<button ng-disabled="fWrestler.$invalid||fWrestler.$pristine" ng-click="save(); fWrestler.$setPristine()" class="btn btn-lg btn-success" style="border: 4px solid red;" disabled="disabled"><ico icon="glyphicon-ok"><span aria-hidden="true" class="glyphicon glyphicon-ok"></span></ico></button>
+						</div>
+						<div class="button">
+							<button confirm="Ви дійсно хочете видалити спортсмена?" ng-disabled="wr.new" ng-click="delete()" class="btn btn-lg btn-danger ng-isolate-scope" disabled="disabled"><ico icon="glyphicon-remove"><span aria-hidden="true" class="glyphicon glyphicon-remove"></span></ico></button>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Wrestler info</div>
+							<div class="panel-body mb-20">
+								<div class="form-group-2 form-group">
+									<fg-input focus="true" require="true" value="wr.lname" label="Last name" class="ng-isolate-scope"><div class="grouped">
+    <input type="" placeholder="Last name" ng-required="require" autocomplete="off" ng-model="value" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" required="required" />
+</div></fg-input>
+									<fg-input require="true" value="wr.fname" label="First name" class="ng-isolate-scope"><div class="grouped">
+    <input type="" placeholder="First name" ng-required="require" autocomplete="off" ng-model="value" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" required="required" />
+</div></fg-input>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-date require="true" ng-model="wr.dob" value="wr.dob" label="Date of Birth" class="ng-pristine ng-untouched ng-isolate-scope ng-valid ng-valid-is-valid"><!--div class="form-group">
+    <label class="control-label col-sm-3">{{label}}</label-->
+    <div class="grouped">
+        <input type="text" autofocus="true" required="" autocomplete="off" ng-model="value" placeholder="Date of Birth" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" />
+    </div>
+<!--/div--></fg-date>
+									<fg-input require="true" value="wr.mname" label="Middle name" class="ng-isolate-scope"><div class="grouped">
+    <input type="" placeholder="Middle name" ng-required="require" autocomplete="off" ng-model="value" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" required="required" />
+</div></fg-input>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-select require="true" options="regions" value="wr.region1" label="Region" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">Region</option><option value="string:2" label="AR Krym">AR Krym</option><option value="string:3" label="Vynnitska">Vynnitska</option><option value="string:4" label="Volynska">Volynska</option><option value="string:5" label="Dnipropetrovska">Dnipropetrovska</option><option value="string:6" label="Donetska">Donetska</option><option value="string:7" label="Ghitomerska">Ghitomerska</option><option value="string:8" label="Zakarpatska">Zakarpatska</option><option value="string:9" label="Zaporizka">Zaporizka</option><option value="string:10" label="Ivano-Frankivska">Ivano-Frankivska</option><option value="string:11" label="Kyivska">Kyivska</option><option value="string:12" label="Kyrovogradska">Kyrovogradska</option><option value="string:13" label="Luganska">Luganska</option><option value="string:14" label="Lvivska">Lvivska</option><option value="string:15" label="Mykolaivska">Mykolaivska</option><option value="string:16" label="Odeska">Odeska</option><option value="string:17" label="Poltavska">Poltavska</option><option value="string:18" label="Rivnenska">Rivnenska</option><option value="string:19" label="Sumska">Sumska</option><option value="string:20" label="Ternopilska">Ternopilska</option><option value="string:21" label="Kharkivska">Kharkivska</option><option value="string:22" label="Khersonska">Khersonska</option><option value="string:23" label="Khemlnicka">Khemlnicka</option><option value="string:24" label="Cherkaska">Cherkaska</option><option value="string:25" label="Chernivetska">Chernivetska</option><option value="string:26" label="Chernigivska">Chernigivska</option><option value="string:27" label="Kyiv">Kyiv</option><option value="string:28" label="Sevastopol">Sevastopol</option></select>
+</div></fg-select>
+									<fg-select options="regions" value="wr.region2" label="Region" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control select-ph ng-valid ng-valid-required ng-pristine" ng-model="value"><option ng-show="!require" value="" class="ng-binding" selected="selected">Region</option><option value="string:2" label="AR Krym">AR Krym</option><option value="string:3" label="Vynnitska">Vynnitska</option><option value="string:4" label="Volynska">Volynska</option><option value="string:5" label="Dnipropetrovska">Dnipropetrovska</option><option value="string:6" label="Donetska">Donetska</option><option value="string:7" label="Ghitomerska">Ghitomerska</option><option value="string:8" label="Zakarpatska">Zakarpatska</option><option value="string:9" label="Zaporizka">Zaporizka</option><option value="string:10" label="Ivano-Frankivska">Ivano-Frankivska</option><option value="string:11" label="Kyivska">Kyivska</option><option value="string:12" label="Kyrovogradska">Kyrovogradska</option><option value="string:13" label="Luganska">Luganska</option><option value="string:14" label="Lvivska">Lvivska</option><option value="string:15" label="Mykolaivska">Mykolaivska</option><option value="string:16" label="Odeska">Odeska</option><option value="string:17" label="Poltavska">Poltavska</option><option value="string:18" label="Rivnenska">Rivnenska</option><option value="string:19" label="Sumska">Sumska</option><option value="string:20" label="Ternopilska">Ternopilska</option><option value="string:21" label="Kharkivska">Kharkivska</option><option value="string:22" label="Khersonska">Khersonska</option><option value="string:23" label="Khemlnicka">Khemlnicka</option><option value="string:24" label="Cherkaska">Cherkaska</option><option value="string:25" label="Chernivetska">Chernivetska</option><option value="string:26" label="Chernigivska">Chernigivska</option><option value="string:27" label="Kyiv">Kyiv</option><option value="string:28" label="Sevastopol">Sevastopol</option></select>
+</div></fg-select>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-select require="true" options="fsts" value="wr.fst1" label="FST" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">FST</option><option value="string:2" label="Dinamo">Dinamo</option><option value="string:3" label="Kolos">Kolos</option><option value="string:4" label="Ukraina">Ukraina</option><option value="string:5" label="Spartak">Spartak</option><option value="string:6" label="MON">MON</option><option value="string:7" label="ZSU">ZSU</option><option value="string:8" label="SK">SK</option></select>
+</div></fg-select>
+									<fg-select options="fsts" value="wr.fst2" label="FST" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control select-ph ng-valid ng-valid-required ng-pristine" ng-model="value"><option ng-show="!require" value="" class="ng-binding" selected="selected">FST</option><option value="string:2" label="Dinamo">Dinamo</option><option value="string:3" label="Kolos">Kolos</option><option value="string:4" label="Ukraina">Ukraina</option><option value="string:5" label="Spartak">Spartak</option><option value="string:6" label="MON">MON</option><option value="string:7" label="ZSU">ZSU</option><option value="string:8" label="SK">SK</option></select>
+</div></fg-select>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-typeahead value="wr.trainer1" label="Trainer" class="ng-isolate-scope"><div class="grouped">
+    <input type="text" typeahead-input-formatter="$model.initials" typeahead-wait-ms="100" typeahead-min-length="2" typeahead-loading="asyncGet" typeahead="s as s.name for s in getTrainer($viewValue)" ng-model="value" placeholder="Trainer" class="form-control ng-valid ng-valid-parse ng-touched ng-pristine" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-133-3041" /><ul aria-hidden="true" role="listbox" style="display: block;;display: block;" ng-style="{top: position.top+'px', left: position.left+'px'}" ng-show="isOpen()" class="dropdown-menu ng-isolate-scope ng-hide" typeahead-popup="" id="typeahead-133-3041" matches="matches" active="activeIdx" select="select(activeIdx)" query="query" position="position">
+    <!-- ngRepeat: match in matches track by $index -->
+</ul>
+    <div ng-show="loading" class="in-control spinner-loader ng-hide"></div>
+</div></fg-typeahead>
+									<fg-typeahead value="wr.trainer2" label="Trainer" class="ng-isolate-scope"><div class="grouped">
+    <input type="text" typeahead-input-formatter="$model.initials" typeahead-wait-ms="100" typeahead-min-length="2" typeahead-loading="asyncGet" typeahead="s as s.name for s in getTrainer($viewValue)" ng-model="value" placeholder="Trainer" class="form-control ng-pristine ng-untouched ng-valid" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-135-5228" /><ul aria-hidden="true" role="listbox" style="display: block;;display: block;" ng-style="{top: position.top+'px', left: position.left+'px'}" ng-show="isOpen()" class="dropdown-menu ng-isolate-scope ng-hide" typeahead-popup="" id="typeahead-135-5228" matches="matches" active="activeIdx" select="select(activeIdx)" query="query" position="position">
+    <!-- ngRepeat: match in matches track by $index -->
+</ul>
+    <div ng-show="loading" class="in-control spinner-loader ng-hide"></div>
+</div></fg-typeahead>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-select require="true" options="styles" value="wr.style" label="Style" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">Style</option><option value="string:1" label="FS">FS</option><option value="string:2" label="FW">FW</option><option value="string:3" label="GR">GR</option></select>
+</div></fg-select>
+									<fg-select require="true" options="lictypes" value="wr.lictype" label="Age" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">Age</option><option value="string:1" label="Junior">Junior</option><option value="string:2" label="Cadet">Cadet</option><option value="string:3" label="Senior">Senior</option></select>
+</div></fg-select>
+								</div>
+								<div class="form-group form-group-2">
+									<fg-select require="true" options="years" value="wr.expires" label="Year" class="ng-isolate-scope"><div class="grouped">
+    <select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid-parse ng-valid ng-valid-required ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">Year</option><option value="string:2017" label="2017">2017</option><option value="string:2016" label="2016">2016</option><option value="string:2015" label="2015">2015</option><option value="string:2014" label="2014">2014</option><option value="string:2013" label="2013">2013</option></select>
+</div></fg-select>
+									<div class="grouped">
+										<div class="form-group">
+											<div class="col-sm-12">
+												<f-select require="true" options="card_states" value="wr.card_state" label="Status" class="ng-isolate-scope"><select ng-required="require" ng-options="o.id as o.name for o in soptions" class="form-control ng-valid ng-valid-required ng-valid-parse ng-touched ng-pristine" ng-model="value" required="required"><option ng-show="!require" value="" class="ng-binding ng-hide" selected="selected">Status</option><option value="string:1" label="No card" selected="selected">No card</option><option value="string:2" label="Produced">Produced</option><option value="string:3" label="Recieved">Recieved</option></select></f-select>
+											</div>
+											
+												<!-- ngIf: false -->
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div ng-hide="wr.new" class="col-sm-4 ng-hide">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Photo</div>
+							<div class="panel-body">
+								<div filters="*.jpg" uploader="photoUploader" over-class="bg-success" nv-file-over="" nv-file-drop="" class="photo-drop col-sm-12">
+									<img class="center-block" />
+								</div>
+								<input type="file" accept="image/jpeg" filters="*.jpg" uploader="photoUploader" nv-file-select="" />
+							</div>
+						</div>
+					</div>
+					<div ng-hide="wr.new" class="col-sm-12 ng-hide">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Documents</div>
+							<div class="panel-body">
+								<div uploader="attachUploader" over-class="bg-success" nv-file-over="" nv-file-drop="" class="file-drop">
+									<table class="table table-striped table-hover">
+										<tbody><!-- ngRepeat: attach in wr.attaches -->
+									</tbody></table>
+								</div>
+								<input type="file" multi="" uploader="attachUploader" nv-file-select="" />
+							</div>
+						</div>
+					</div>
+				</div> <!-- end wrestler -->
+			</div>
+		</form>
+	</div>
+</div></div>
+		</div><!-- end ngRepeat: tab in tabs -->
+  </div>
+</div>
+</div></div>
+		</div>
+    </div>
+	<script src="js/app.js"></script>
+	<script src="js/resources.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/wrestler.js"></script>
+	<script src="js/trainer.js"></script>
+	<script src="js/order.js"></script>
+	<script src="js/export.js"></script>
+	<script src="js/directives.js"></script>
+
+</body><canvas id="fxdriver-screenshot-canvas" style="display: none;" width="1519" height="741"></canvas></html>
