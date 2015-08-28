@@ -1,0 +1,135 @@
+{
+  "title": "3_1 Upload sportsman\u0027s photo and verify it",
+  "name": "3_1 Upload sportsman\u0027s photo and verify it",
+  "result": "SUCCESS",
+  "steps": "7",
+  "successful": "7",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "18302",
+  "timestamp": "2015-08-27T10:58:18.026+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 812,
+      "startTime": 1440662298034,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 810,
+          "startTime": 1440662298036,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When add new sportsmen with data:［\r\n| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |\r\n| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |］",
+      "duration": 13183,
+      "startTime": 1440662298847,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Click create new sportsmen",
+          "duration": 573,
+          "startTime": 1440662298850,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Add or edit data sportsman: {ExamplesTable[tableAsString\u003d\r\n| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | trainer1       | style | age    | year | cardAvailability  |\r\n| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  | TheBestTrainer |  FS   | Junior | 2015 | Produced          |,headerSeparator\u003d|,valueSeparator\u003d|,ignorableSeparator\u003d|--,parameterConverters\u003dorg.jbehave.core.steps.ParameterConverters@30cff762,tableTransformers\u003dorg.jbehave.core.model.TableTransformers@257a5bf7,headers\u003d[lastName, firstName, middleName, birthDate, Region1, FST1, trainer1, style, age, year, cardAvailability],data\u003d[{lastName\u003dAutomation01, firstName\u003dAuto01, middleName\u003dAutomiddle, birthDate\u003d07-07-1987, Region1\u003dKyrovogradska, FST1\u003dDinamo, trainer1\u003dTheBestTrainer, style\u003dFS, age\u003dJunior, year\u003d2015, cardAvailability\u003dProduced}],properties\u003d{headerSeparator\u003d|, valueSeparator\u003d|, ignorableSeparator\u003d|--},propertiesAsString\u003d,namedParameters\u003d{runScenario\u003d},trim\u003dtrue,defaults\u003dorg.jbehave.core.steps.ConvertedParameters@77423fa5]}",
+          "duration": 12604,
+          "startTime": 1440662299424,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "And finds sportsman and uploads photo with name {picture.jpg}",
+      "duration": 4231,
+      "startTime": 1440662312033,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 7,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 336,
+          "startTime": 1440662312037,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 8,
+          "description": "Edit sportsman",
+          "duration": 852,
+          "startTime": 1440662312374,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 9,
+          "description": "Upload photo: {picture.jpg}",
+          "duration": 3036,
+          "startTime": 1440662313227,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "description": "Then verify image has been uploded on the Page",
+      "duration": 62,
+      "startTime": 1440662316265,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 11,
+          "description": "Is img displayed",
+          "duration": 55,
+          "startTime": 1440662316270,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

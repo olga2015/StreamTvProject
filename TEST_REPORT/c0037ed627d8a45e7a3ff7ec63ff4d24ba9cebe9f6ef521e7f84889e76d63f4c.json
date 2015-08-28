@@ -1,0 +1,126 @@
+{
+  "title": "3_1 Upload attachment, verify it and delete",
+  "name": "3_1 Upload attachment, verify it and delete",
+  "result": "SUCCESS",
+  "steps": "6",
+  "successful": "6",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "5679",
+  "timestamp": "2015-08-27T10:58:36.330+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 811,
+      "startTime": 1440662316338,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 807,
+          "startTime": 1440662316340,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When finds sportsman and uploads attachment with name {112233.txt}",
+      "duration": 4648,
+      "startTime": 1440662317149,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 591,
+          "startTime": 1440662317153,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Edit sportsman",
+          "duration": 1007,
+          "startTime": 1440662317745,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 6,
+          "description": "Upload attachment: {112233.txt}",
+          "duration": 3043,
+          "startTime": 1440662318753,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then verify correct attachment was uploaded",
+      "duration": 85,
+      "startTime": 1440662321798,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 8,
+          "description": "Get attach name",
+          "duration": 80,
+          "startTime": 1440662321803,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "description": "When deletes attachment",
+      "duration": 124,
+      "startTime": 1440662321883,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 10,
+          "description": "Delete attach",
+          "duration": 121,
+          "startTime": 1440662321886,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

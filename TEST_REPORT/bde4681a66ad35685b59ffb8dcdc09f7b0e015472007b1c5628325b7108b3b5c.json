@@ -1,0 +1,98 @@
+{
+  "title": "2_1 Find sportsmen with defined filters and verify searched data",
+  "name": "2_1 Find sportsmen with defined filters and verify searched data",
+  "result": "SUCCESS",
+  "steps": "4",
+  "successful": "4",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "1872",
+  "timestamp": "2015-08-27T10:58:16.152+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 806,
+      "startTime": 1440662296164,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 803,
+          "startTime": 1440662296166,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When finds data with filters:［\r\n| Region | Fst    |\r\n| Odeska | Dinamo |］",
+      "duration": 838,
+      "startTime": 1440662296970,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find with region and fst: {ExamplesTable[tableAsString\u003d\r\n| Region | Fst    |\r\n| Odeska | Dinamo |,headerSeparator\u003d|,valueSeparator\u003d|,ignorableSeparator\u003d|--,parameterConverters\u003dorg.jbehave.core.steps.ParameterConverters@30cff762,tableTransformers\u003dorg.jbehave.core.model.TableTransformers@257a5bf7,headers\u003d[Region, Fst],data\u003d[{Region\u003dOdeska, Fst\u003dDinamo}],properties\u003d{headerSeparator\u003d|, valueSeparator\u003d|, ignorableSeparator\u003d|--},propertiesAsString\u003d,namedParameters\u003d{runScenario\u003d},trim\u003dtrue,defaults\u003dorg.jbehave.core.steps.ConvertedParameters@3781facd]}",
+          "duration": 833,
+          "startTime": 1440662296974,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "description": "Then verify data has been correctly selected",
+      "duration": 214,
+      "startTime": 1440662297809,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 6,
+          "description": "Get all regions",
+          "duration": 117,
+          "startTime": 1440662297812,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 7,
+          "description": "Get all fst on page",
+          "duration": 92,
+          "startTime": 1440662297930,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

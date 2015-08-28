@@ -1,0 +1,29 @@
+<acceptance-test-run title="2_1 Find sportsmen with defined filters and verify searched data" name="2_1 Find sportsmen with defined filters and verify searched data" steps="4" successful="4" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="1872" timestamp="2015-08-27T10:58:16.152+03:00">
+  <user-story id="Sportmens" name="Sportmens" path="stories/test1/Sportmens.story"/>
+  <tags>
+    <tag name="Test1" type="capability"/>
+    <tag name="Sportmens" type="story"/>
+  </tags>
+  <test-group name="Given User opens Login Page and login to the base page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="803">
+      <description>Login to site</description>
+    </test-step>
+  </test-group>
+  <test-group name="When finds data with filters:［&#xd;
+| Region | Fst    |&#xd;
+| Odeska | Dinamo |］" result="SUCCESS">
+    <test-step result="SUCCESS" duration="833">
+      <description>Find with region and fst: {ExamplesTable[tableAsString=&#xd;
+| Region | Fst    |&#xd;
+| Odeska | Dinamo |,headerSeparator=|,valueSeparator=|,ignorableSeparator=|--,parameterConverters=org.jbehave.core.steps.ParameterConverters@30cff762,tableTransformers=org.jbehave.core.model.TableTransformers@257a5bf7,headers=[Region, Fst],data=[{Region=Odeska, Fst=Dinamo}],properties={headerSeparator=|, valueSeparator=|, ignorableSeparator=|--},propertiesAsString=,namedParameters={runScenario=},trim=true,defaults=org.jbehave.core.steps.ConvertedParameters@3781facd]}</description>
+    </test-step>
+  </test-group>
+  <test-group name="Then verify data has been correctly selected" result="SUCCESS">
+    <test-step result="SUCCESS" duration="117">
+      <description>Get all regions</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="92">
+      <description>Get all fst on page</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

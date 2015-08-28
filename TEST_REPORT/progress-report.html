@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Capabilities</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/core.css"/>
+    <link rel="stylesheet" type="text/css" href="jqplot/jquery.jqplot.min.css"/>
+
+    <!--[if IE]>
+    <script language="javascript" type="text/javascript" src="jit/Extras/excanvas.js"></script><![endif]-->
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="scripts/dygraph-combined.js"></script>
+
+
+    <link type="text/css" href="jqueryui/css/start/jquery-ui-1.8.18.custom.css" rel="Stylesheet" />
+    <script type="text/javascript" src="jqueryui/js/jquery-ui-1.8.18.custom.min.js"></script>
+
+    <link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet" />
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/logo.jpg" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname"></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="bluetext"><a href="index.html" class="bluetext">Home</a> > Capabilities </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Test Results</a></li>
+            <li><a href="capabilities.html">Requirements</a></li>
+            <li><a href="progress-report.html" class="current">Progress</a></li>
+            <li><a href="releases.html">Releases</a></li>
+            <li><a href="history.html">History</a></li>
+        </ul>
+        <span class="date-and-time">Tests run 27-08-2015 10:58</span>
+        <br style="clear:left"/>
+    </div>
+
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+                <div id="progress-graph"></div>
+                <script type="text/javascript">
+                    g = new Dygraph(
+                            document.getElementById("progress-graph"),
+                            "Build,Capabilities,Passed,Failed,Estimated,Total\n" +
+                                "2015/08/24 09:33:17, 0, 0, 0, 0, 0\n" +
+                                                            "2015/08/24 11:08:38, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 12:55:37, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 12:55:38, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 01:01:49, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 01:01:50, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 12:21:41, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 12:21:42, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:30:18, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:30:19, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:32:12, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:33:21, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:33:47, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:34:55, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:37:10, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:37:58, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:46:56, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 04:49:46, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:02:12, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:16:10, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:19:39, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:21:03, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:23:56, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:26:28, 1, 0, 0, 0, 1\n" +
+                                                            "2015/08/25 05:33:49, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 05:40:39, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 06:05:58, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 06:11:54, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 06:32:50, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 06:33:11, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 08:44:08, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 08:45:03, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 08:45:04, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 08:47:06, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 08:58:59, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 08:59:01, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:38:13, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 10:43:02, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:43:09, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:52:41, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:52:43, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:53:21, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:53:23, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 10:56:46, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 10:58:18, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 10:58:51, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/25 11:07:37, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 11:07:38, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 11:09:36, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 11:09:37, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 11:32:00, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/25 11:32:02, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:00:20, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:00:22, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:03:20, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:03:22, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:31:28, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:31:30, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:33:35, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 12:33:37, 1, 1, 0, 1, 1\n" +
+                                                            "2015/08/26 01:28:50, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 01:35:41, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 01:40:30, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 01:54:19, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 10:12:43, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:22:11, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:22:15, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:26:58, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:27:00, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:35:17, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:40:10, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:40:52, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:44:42, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:44:45, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:48:26, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:48:28, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:49:57, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:50:00, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:51:01, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:51:04, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/26 11:51:46, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:16:55, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:21:26, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:21:28, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:22:11, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:23:24, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:27:19, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:31:05, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:39:09, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:40:26, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:42:16, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 12:42:18, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 10:54:09, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 10:54:11, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 10:55:48, 1, 0, 1, 0, 1\n" +
+                                                            "2015/08/27 10:58:48, 1, 0, 1, 0, 1\n"
+                            ,
+                            { fillGraph: true,
+                                width: 640,
+                                height: 480,
+                                title: 'Project Progress (Capabilities)',
+                                titleHeight: 32,
+                                colors: ['#ffda4b', 'green', '#EE1111','#bccb8e', '#00aeff'],
+                                legend: 'always',
+                                drawAxesAtZero: true,
+                                includeZero: true,
+
+                                'Estimated': {
+                                    fillGraph: false
+                                },
+                                'Total': {
+                                    fillGraph: false
+                                }
+                            }
+                    );
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter"></div>
+
+</body>
+</html>

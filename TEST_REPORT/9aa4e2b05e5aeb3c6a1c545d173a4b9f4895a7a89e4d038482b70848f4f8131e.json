@@ -1,0 +1,88 @@
+{
+  "title": "1_3 Update values for added sportsman",
+  "name": "1_3 Update values for added sportsman",
+  "result": "SUCCESS",
+  "steps": "4",
+  "successful": "4",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "2820",
+  "timestamp": "2015-08-27T10:58:13.331+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 827,
+      "startTime": 1440662293341,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 823,
+          "startTime": 1440662293344,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When find current sportsman and delete profile",
+      "duration": 1981,
+      "startTime": 1440662294168,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 614,
+          "startTime": 1440662294170,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Edit sportsman",
+          "duration": 876,
+          "startTime": 1440662294785,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 6,
+          "description": "Delete sportsman",
+          "duration": 487,
+          "startTime": 1440662295662,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

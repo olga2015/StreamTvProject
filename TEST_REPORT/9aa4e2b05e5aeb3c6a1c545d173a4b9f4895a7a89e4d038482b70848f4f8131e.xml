@@ -1,0 +1,23 @@
+<acceptance-test-run title="1_3 Update values for added sportsman" name="1_3 Update values for added sportsman" steps="4" successful="4" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="2820" timestamp="2015-08-27T10:58:13.331+03:00">
+  <user-story id="Sportmens" name="Sportmens" path="stories/test1/Sportmens.story"/>
+  <tags>
+    <tag name="Test1" type="capability"/>
+    <tag name="Sportmens" type="story"/>
+  </tags>
+  <test-group name="Given User opens Login Page and login to the base page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="823">
+      <description>Login to site</description>
+    </test-step>
+  </test-group>
+  <test-group name="When find current sportsman and delete profile" result="SUCCESS">
+    <test-step result="SUCCESS" duration="614">
+      <description>Find sportsman: {Automation01}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="876">
+      <description>Edit sportsman</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="487">
+      <description>Delete sportsman</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>
