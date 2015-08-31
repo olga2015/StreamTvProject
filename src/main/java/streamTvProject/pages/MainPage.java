@@ -1,9 +1,10 @@
 package streamTvProject.pages;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-
-import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
 
 import net.thucydides.core.Thucydides;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -13,6 +14,8 @@ import net.thucydides.core.pages.WebElementFacade;
 
 @DefaultUrl("http://streamtv.net.ua/base/")
 public class MainPage extends PageObject {
+
+	private static final int TD_NUMBER_WITH_NAME = 2;
 
 	private static final String TEXT_AFTER_LOADING_PAGE = "Login";
 
@@ -73,6 +76,9 @@ public class MainPage extends PageObject {
 	@FindBy(xpath = "//div[@class='wrestler col-sm-12']//button[1]")
 	private WebElementFacade buttonSaveNewSportsmen;
 
+	@FindBy(xpath = "//button[@ng-click='delete()']")
+	private WebElementFacade buttonDeleteSportsmen;
+
 	@FindBy(xpath = "//div[@class='col-lg-12']//input")
 	private WebElementFacade inputSearch;
 
@@ -82,11 +88,39 @@ public class MainPage extends PageObject {
 	@FindBy(xpath = "//div[contains(text(), 'Wrestlers')]")
 	private WebElementFacade tabWrestler;
 
-	private static final String SPINNER_LOADER = "//div[class='spinner-loader']";
+	@FindBy(xpath = "//div[@class='modal-footer ng-scope']/button[@class='btn btn-success']")
+	private WebElementFacade buttonAcceptModalDialog;
 
-	private static final String DATA_IN_CELL_FOR_FIRST_RECORD = "//div[@class='col-sm-12 mt80']//tr/td[%d]";
+	@FindBy(xpath = "//button[@ng-click='resetFilters()']/following-sibling::select[1]")
+	private WebElementFacade selectRegionFromFilter;
 
+	@FindBy(xpath = "//button[@ng-click='resetFilters()']/following-sibling::select[2]")
+	private WebElementFacade selectFstFromFilter;
+
+	@FindBy(xpath = "//input[@uploader='photoUploader']")
+	private WebElementFacade buttonUploadPhoto;
+
+	@FindBy(xpath = "//div[@uploader='photoUploader']/img")
+	private WebElementFacade img;
+
+	@FindBy(xpath = "//input[@uploader='attachUploader']")
+	private WebElementFacade buttonUploadAttach;
+
+	@FindBy(xpath = "//tr[@ng-repeat='attach in wr.attaches']//a")
+	private WebElementFacade tdWithAttach;
+
+	@FindBy(xpath = "//ico[@ng-click='deleteAttach($index)']/span")
+	private WebElementFacade buttonDeleteAttach;
+
+	private static final String SPINNER_LOADER = "//div[contains(@class,'spinner-loader')]";
+	private static final String DATA_IN_CELL_FOR_FIRST_RECORD = "//tr[@ng-click='openWrestler(wrestler)']/td[%d]";
 	private static final String CLOSE_WRESTLER_TAB = "//div[contains(text(), '%s')]//ico[@icon='glyphicon-remove']";
+	private static final String TEXT_ON_SPORTSMAN_TAB = "Wrestler info";
+	private static final String NAMES_IN_CELLS = "//div[@class='col-sm-12 mt80']//tr/td[2]";
+	private static final String REGIONS_IN_CELLS = "//div[@class='col-sm-12 mt80']//tr/td[3]";
+	private static final String FST_IN_CELLS = "//div[@class='col-sm-12 mt80']//tr/td[4]";
+	private static final String IMG_CONTAINS_DATA = "//div[@uploader='photoUploader']/img[contains(@src, 'data:image/png')]";
+	private static final String TR_WITH_ATTACH = "//tr[@ng-repeat='attach in wr.attaches']";
 
 	public MainPage(WebDriver driver) {
 		super(driver);
@@ -161,13 +195,14 @@ public class MainPage extends PageObject {
 	}
 
 	public void clickSaveNewSportsmen() {
-		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("arguments[0].style.border='4px solid red'",
-				buttonSaveNewSportsmen);
+		highlightElement(buttonSaveNewSportsmen);
 		buttonSaveNewSportsmen.click();
 		waitForAbsenceOf(SPINNER_LOADER);
-		//
-		waitABit(5000);
+	}
+
+	private void highlightElement(WebElementFacade element) {
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].style.border='4px solid red'", element);
 	}
 
 	public void clickOnWrestlerTab() {
@@ -187,6 +222,7 @@ public class MainPage extends PageObject {
 
 	public void clickButtonSearch() {
 		buttonSearch.click();
+		waitForAbsenceOf(SPINNER_LOADER);
 	}
 
 	public String getTextFromCell(int tdNumber) {
@@ -195,4 +231,68 @@ public class MainPage extends PageObject {
 		return findBy(cellString).then().getText();
 	}
 
+	public void clickEditFirstRecord() {
+		String cellString = String.format(DATA_IN_CELL_FOR_FIRST_RECORD,
+				TD_NUMBER_WITH_NAME);
+		findBy(cellString).then().click();
+		waitForAnyTextToAppear(TEXT_ON_SPORTSMAN_TAB);
+	}
+
+	public void clickOnDeleteSportsmanProfile() {
+		highlightElement(buttonDeleteSportsmen);
+		buttonDeleteSportsmen.click();
+		buttonAcceptModalDialog.click();
+	}
+
+	private List<String> getAllDataFromColumnOnPage(String element) {
+		List<WebElementFacade> cellsWebElements = findAll(element);
+		List<String> dataInCells = new LinkedList<String>();
+		for (WebElementFacade dataInOneCell : cellsWebElements) {
+			highlightElement(dataInOneCell);
+			dataInCells.add(dataInOneCell.getText());
+		}
+		return dataInCells;
+	}
+
+	public List<String> getAllNamesOnPage() {
+		return getAllDataFromColumnOnPage(NAMES_IN_CELLS);
+	}
+
+	public List<String> getAllregionsOnPage() {
+		return getAllDataFromColumnOnPage(REGIONS_IN_CELLS);
+	}
+
+	public List<String> getAllFstOnPage() {
+		return getAllDataFromColumnOnPage(FST_IN_CELLS);
+	}
+
+	public void selectRegionFromFilter(String region) {
+		selectRegionFromFilter.selectByVisibleText(region);
+	}
+
+	public void selectFstFromFilter(String fst) {
+		selectFstFromFilter.selectByVisibleText(fst);
+	}
+
+	public void uploadPhoto(String absolutePath) {
+		upload(absolutePath).to(buttonUploadPhoto);
+		waitFor(IMG_CONTAINS_DATA);
+	}
+
+	public boolean isImgDisplayed() {
+		return img.isDisplayed();
+	}
+
+	public void uploadAttach(String absolutePath) {
+		upload(absolutePath).to(buttonUploadAttach);
+		waitFor(TR_WITH_ATTACH);
+	}
+
+	public String getAttachName() {
+		return tdWithAttach.getText();
+	}
+
+	public void clickOnDeletAttachment() {
+		buttonDeleteAttach.click();
+	}
 }
