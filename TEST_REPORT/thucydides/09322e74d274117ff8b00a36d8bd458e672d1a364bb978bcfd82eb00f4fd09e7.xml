@@ -1,0 +1,29 @@
+<acceptance-test-run title="Postcondition steps" name="Postcondition steps" steps="6" successful="6" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="3348" timestamp="2015-08-31T14:23:58.742+03:00">
+  <user-story id="Sportmens" name="Sportmens" path="stories/test1/Sportmens.story"/>
+  <tags>
+    <tag name="Test1" type="capability"/>
+    <tag name="Sportmens" type="story"/>
+  </tags>
+  <test-group name="Given User opens Login Page and login to the base page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="998">
+      <description>Login to site</description>
+    </test-step>
+  </test-group>
+  <test-group name="When delete sportsman with name {Automation01 Auto01 Automiddle}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="899">
+      <description>Find sportsman: {Automation01 Auto01 Automiddle}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="89">
+      <description>Get all names on page</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="280">
+      <description>Edit sportsman</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="440">
+      <description>Delete sportsman</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="613">
+      <description>Find sportsman: {Automation01 Auto01 Automiddle}</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

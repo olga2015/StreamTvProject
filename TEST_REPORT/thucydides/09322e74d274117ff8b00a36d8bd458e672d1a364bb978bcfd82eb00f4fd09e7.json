@@ -1,0 +1,106 @@
+{
+  "title": "Postcondition steps",
+  "name": "Postcondition steps",
+  "result": "SUCCESS",
+  "steps": "6",
+  "successful": "6",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "3348",
+  "timestamp": "2015-08-31T14:23:58.742+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 1001,
+      "startTime": 1441020238758,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 998,
+          "startTime": 1441020238761,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When delete sportsman with name {Automation01 Auto01 Automiddle}",
+      "duration": 2328,
+      "startTime": 1441020239760,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find sportsman: {Automation01 Auto01 Automiddle}",
+          "duration": 899,
+          "startTime": 1441020239763,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Get all names on page",
+          "duration": 89,
+          "startTime": 1441020240663,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 6,
+          "description": "Edit sportsman",
+          "duration": 280,
+          "startTime": 1441020240753,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 7,
+          "description": "Delete sportsman",
+          "duration": 440,
+          "startTime": 1441020241034,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 8,
+          "description": "Find sportsman: {Automation01 Auto01 Automiddle}",
+          "duration": 613,
+          "startTime": 1441020241475,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

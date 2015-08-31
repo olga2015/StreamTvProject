@@ -1,0 +1,40 @@
+<acceptance-test-run title="3_1 Upload sportsman&apos;s photo and verify it" name="3_1 Upload sportsman&apos;s photo and verify it" steps="7" successful="7" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="20586" timestamp="2015-08-31T14:23:35.506+03:00">
+  <user-story id="Sportmens" name="Sportmens" path="stories/test1/Sportmens.story"/>
+  <tags>
+    <tag name="Test1" type="capability"/>
+    <tag name="Sportmens" type="story"/>
+  </tags>
+  <test-group name="Given User opens Login Page and login to the base page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="4113">
+      <description>Login to site</description>
+    </test-step>
+  </test-group>
+  <test-group name="When add new sportsmen with data:［&#xd;
+| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | style | age    | year |&#xd;
+| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  |  FS   | Junior | 2015 |］" result="SUCCESS">
+    <test-step result="SUCCESS" duration="1127">
+      <description>Click create new sportsmen</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="13118">
+      <description>Add or edit data sportsman: {ExamplesTable[tableAsString=&#xd;
+| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | style | age    | year |&#xd;
+| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  |  FS   | Junior | 2015 |,headerSeparator=|,valueSeparator=|,ignorableSeparator=|--,parameterConverters=org.jbehave.core.steps.ParameterConverters@3ebe6c82,tableTransformers=org.jbehave.core.model.TableTransformers@47c5eafc,headers=[lastName, firstName, middleName, birthDate, Region1, FST1, style, age, year],data=[{lastName=Automation01, firstName=Auto01, middleName=Automiddle, birthDate=07-07-1987, Region1=Kyrovogradska, FST1=Dinamo, style=FS, age=Junior, year=2015}],properties={headerSeparator=|, valueSeparator=|, ignorableSeparator=|--},propertiesAsString=,namedParameters={runScenario=},trim=true,defaults=org.jbehave.core.steps.ConvertedParameters@52eca6a8]}</description>
+    </test-step>
+  </test-group>
+  <test-group name="And finds sportsman and uploads photo with name {picture.jpg}" result="SUCCESS">
+    <test-step result="SUCCESS" duration="564">
+      <description>Find sportsman: {Automation01}</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="434">
+      <description>Edit sportsman</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="1047">
+      <description>Upload photo: {picture.jpg}</description>
+    </test-step>
+  </test-group>
+  <test-group name="Then verify image has been uploded on the Page" result="SUCCESS">
+    <test-step result="SUCCESS" duration="39">
+      <description>Is img displayed</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

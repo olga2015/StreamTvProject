@@ -1,0 +1,129 @@
+{
+  "title": "1_2 Update values for added sportsman",
+  "name": "1_2 Update values for added sportsman",
+  "result": "FAILURE",
+  "steps": "6",
+  "successful": "5",
+  "failures": "1",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "22430",
+  "timestamp": "2015-08-31T14:22:53.302+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 4135,
+      "startTime": 1441020173366,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 4117,
+          "startTime": 1441020173381,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When find current sportsman and edit with values:［\r\n| Region1 | FST1  | style | age    | year | cardAvailability  |\r\n| Kyivska | Kolos |  GR   | Senior | 2016 | Recieved          |］",
+      "duration": 13616,
+      "startTime": 1441020177502,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 2672,
+          "startTime": 1441020177516,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Edit sportsman",
+          "duration": 1239,
+          "startTime": 1441020180191,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 6,
+          "description": "Add or edit data sportsman: {ExamplesTable[tableAsString\u003d\r\n| Region1 | FST1  | style | age    | year | cardAvailability  |\r\n| Kyivska | Kolos |  GR   | Senior | 2016 | Recieved          |,headerSeparator\u003d|,valueSeparator\u003d|,ignorableSeparator\u003d|--,parameterConverters\u003dorg.jbehave.core.steps.ParameterConverters@3ebe6c82,tableTransformers\u003dorg.jbehave.core.model.TableTransformers@47c5eafc,headers\u003d[Region1, FST1, style, age, year, cardAvailability],data\u003d[{Region1\u003dKyivska, FST1\u003dKolos, style\u003dGR, age\u003dSenior, year\u003d2016, cardAvailability\u003dRecieved}],properties\u003d{headerSeparator\u003d|, valueSeparator\u003d|, ignorableSeparator\u003d|--},propertiesAsString\u003d,namedParameters\u003d{runScenario\u003d},trim\u003dtrue,defaults\u003dorg.jbehave.core.steps.ConvertedParameters@65306276]}",
+          "duration": 9676,
+          "startTime": 1441020181435,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then user finds added sportsmen and checks saved data",
+      "duration": 4593,
+      "startTime": 1441020191126,
+      "screenshots": [
+        {
+          "screenshot": {
+            "path": "target\\site\\thucydides\\screenshot-fa865adfd6358a1662c5d01f691f5eca507e202b8c15cc7ba1708b08479b3b6d2.png"
+          },
+          "sourcecode": {
+            "path": "C:\\StreamTvProject\\target\\site\\thucydides\\screenshot-fa865adfd6358a1662c5d01f691f5eca507e202b8c15cc7ba1708b08479b3b6d2.html"
+          }
+        }
+      ],
+      "cause": {
+        "class": "net.thucydides.core.steps.StepFailureException",
+        "message": "Data in the first record is not as expected\nExpected: \u003c[Automation01 Auto01 Automiddle, Kyivska, Kolos, 2016, GR]\u003e\n     but: was \u003c[Automation01 Auto01 Automiddle, Kyivska, Kolos, 2015, GR]\u003e"
+      },
+      "result": "FAILURE",
+      "children": [
+        {
+          "number": 8,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 2196,
+          "startTime": 1441020191136,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 9,
+          "description": "Get text from cells",
+          "duration": 1081,
+          "startTime": 1441020193336,
+          "screenshots": [],
+          "result": "FAILURE",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

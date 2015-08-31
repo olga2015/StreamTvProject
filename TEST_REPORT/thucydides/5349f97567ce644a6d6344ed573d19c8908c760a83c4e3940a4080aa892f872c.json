@@ -1,0 +1,77 @@
+{
+  "title": "CRUD sportsman",
+  "name": "CRUD sportsman",
+  "result": "SUCCESS",
+  "steps": "5",
+  "successful": "5",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "3980",
+  "timestamp": "2015-08-31T14:24:03.510+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "SportsmenApiTests",
+    "storyName": "Sportsmen api tests",
+    "path": "stories/test1/SportsmenApiTests.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportsmen api tests",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given create sportsman",
+      "duration": 1847,
+      "startTime": 1441020243520,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": []
+    },
+    {
+      "number": 2,
+      "description": "When read sportsman",
+      "duration": 326,
+      "startTime": 1441020245368,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": []
+    },
+    {
+      "number": 3,
+      "description": "Then verify read name equals to {1}",
+      "duration": 11,
+      "startTime": 1441020245696,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": []
+    },
+    {
+      "number": 4,
+      "description": "Then update sportsman and verify success answer:［\r\n| mname  | dob        |\r\n| Auto15 | 03-03-1989 |］",
+      "duration": 1152,
+      "startTime": 1441020245708,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": []
+    },
+    {
+      "number": 5,
+      "description": "Then delete sportsman and verify success answer from server",
+      "duration": 614,
+      "startTime": 1441020246868,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "title": "Precondition steps",
+  "name": "Precondition steps",
+  "result": "SUCCESS",
+  "steps": "3",
+  "successful": "3",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "12596",
+  "timestamp": "2015-08-31T14:22:26.779+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 11245,
+      "startTime": 1441020147131,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 10398,
+          "startTime": 1441020147976,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When delete sportsman with name {Automation01 Auto01 Automiddle}",
+      "duration": 995,
+      "startTime": 1441020158377,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Find sportsman: {Automation01 Auto01 Automiddle}",
+          "duration": 949,
+          "startTime": 1441020158390,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Get all names on page",
+          "duration": 30,
+          "startTime": 1441020159341,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

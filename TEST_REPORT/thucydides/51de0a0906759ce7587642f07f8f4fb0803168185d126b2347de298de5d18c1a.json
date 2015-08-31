@@ -1,0 +1,135 @@
+{
+  "title": "3_1 Upload sportsman\u0027s photo and verify it",
+  "name": "3_1 Upload sportsman\u0027s photo and verify it",
+  "result": "SUCCESS",
+  "steps": "7",
+  "successful": "7",
+  "failures": "0",
+  "skipped": "0",
+  "ignored": "0",
+  "pending": "0",
+  "duration": "20586",
+  "timestamp": "2015-08-31T14:23:35.506+03:00",
+  "user-story": {
+    "qualifiedStoryClassName": "Sportmens",
+    "storyName": "Sportmens",
+    "path": "stories/test1/Sportmens.story"
+  },
+  "issues": [],
+  "versions": [],
+  "tags": [
+    {
+      "name": "Test1",
+      "type": "capability"
+    },
+    {
+      "name": "Sportmens",
+      "type": "story"
+    }
+  ],
+  "test-steps": [
+    {
+      "number": 1,
+      "description": "Given User opens Login Page and login to the base page",
+      "duration": 4124,
+      "startTime": 1441020215606,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 2,
+          "description": "Login to site",
+          "duration": 4113,
+          "startTime": 1441020215614,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "description": "When add new sportsmen with data:［\r\n| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | style | age    | year |\r\n| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  |  FS   | Junior | 2015 |］",
+      "duration": 14263,
+      "startTime": 1441020219731,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 4,
+          "description": "Click create new sportsmen",
+          "duration": 1127,
+          "startTime": 1441020219744,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 5,
+          "description": "Add or edit data sportsman: {ExamplesTable[tableAsString\u003d\r\n| lastName     | firstName | middleName | birthDate  | Region1       | FST1    | style | age    | year |\r\n| Automation01 | Auto01    | Automiddle | 07-07-1987 | Kyrovogradska | Dinamo  |  FS   | Junior | 2015 |,headerSeparator\u003d|,valueSeparator\u003d|,ignorableSeparator\u003d|--,parameterConverters\u003dorg.jbehave.core.steps.ParameterConverters@3ebe6c82,tableTransformers\u003dorg.jbehave.core.model.TableTransformers@47c5eafc,headers\u003d[lastName, firstName, middleName, birthDate, Region1, FST1, style, age, year],data\u003d[{lastName\u003dAutomation01, firstName\u003dAuto01, middleName\u003dAutomiddle, birthDate\u003d07-07-1987, Region1\u003dKyrovogradska, FST1\u003dDinamo, style\u003dFS, age\u003dJunior, year\u003d2015}],properties\u003d{headerSeparator\u003d|, valueSeparator\u003d|, ignorableSeparator\u003d|--},propertiesAsString\u003d,namedParameters\u003d{runScenario\u003d},trim\u003dtrue,defaults\u003dorg.jbehave.core.steps.ConvertedParameters@52eca6a8]}",
+          "duration": 13118,
+          "startTime": 1441020220875,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "And finds sportsman and uploads photo with name {picture.jpg}",
+      "duration": 2051,
+      "startTime": 1441020233996,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 7,
+          "description": "Find sportsman: {Automation01}",
+          "duration": 564,
+          "startTime": 1441020233999,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 8,
+          "description": "Edit sportsman",
+          "duration": 434,
+          "startTime": 1441020234564,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        },
+        {
+          "number": 9,
+          "description": "Upload photo: {picture.jpg}",
+          "duration": 1047,
+          "startTime": 1441020234999,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "description": "Then verify image has been uploded on the Page",
+      "duration": 42,
+      "startTime": 1441020236048,
+      "screenshots": [],
+      "result": "SUCCESS",
+      "children": [
+        {
+          "number": 11,
+          "description": "Is img displayed",
+          "duration": 39,
+          "startTime": 1441020236049,
+          "screenshots": [],
+          "result": "SUCCESS",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

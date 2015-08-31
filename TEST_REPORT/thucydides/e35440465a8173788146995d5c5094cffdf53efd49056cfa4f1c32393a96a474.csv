@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Sportmens","1_3 Update values for added sportsman","SUCCESS","2015-08-31T14:23:15.741+03:00","0.0","9.84"
+"Sportmens","2_1 Find sportsmen with defined filters and verify searched data","SUCCESS","2015-08-31T14:23:25.585+03:00","0.0","9.92"
+"Sportmens","3_1 Upload sportsman's photo and verify it","SUCCESS","2015-08-31T14:23:35.506+03:00","0.0","20.59"
+"Sportmens","3_2 Upload attachment, verify it and delete","SUCCESS","2015-08-31T14:23:56.094+03:00","0.0","2.65"
+"Sportmens","Postcondition steps","SUCCESS","2015-08-31T14:23:58.742+03:00","0.0","3.35"
+"Sportmens","Precondition steps","SUCCESS","2015-08-31T14:22:26.779+03:00","0.0","12.6"

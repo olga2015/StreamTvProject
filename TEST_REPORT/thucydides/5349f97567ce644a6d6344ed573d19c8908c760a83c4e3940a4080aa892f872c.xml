@@ -1,0 +1,24 @@
+<acceptance-test-run title="CRUD sportsman" name="CRUD sportsman" steps="5" successful="5" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="3980" timestamp="2015-08-31T14:24:03.510+03:00">
+  <user-story id="SportsmenApiTests" name="Sportsmen api tests" path="stories/test1/SportsmenApiTests.story"/>
+  <tags>
+    <tag name="Test1" type="capability"/>
+    <tag name="Sportsmen api tests" type="story"/>
+  </tags>
+  <test-step result="SUCCESS" duration="1847">
+    <description>Given create sportsman</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="326">
+    <description>When read sportsman</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="11">
+    <description>Then verify read name equals to {1}</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="1152">
+    <description>Then update sportsman and verify success answer:［&#xd;
+| mname  | dob        |&#xd;
+| Auto15 | 03-03-1989 |］</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="614">
+    <description>Then delete sportsman and verify success answer from server</description>
+  </test-step>
+</acceptance-test-run>
